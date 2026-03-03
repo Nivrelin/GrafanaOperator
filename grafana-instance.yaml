@@ -8,7 +8,7 @@ metadata:
 spec:
   dashboardLabelSelector:
     matchLabels:
-      app: grafana  
+      dashboards: grafana  
   config:
     server:
       root_url: https://%(domain)s/ # Wichtig für korrekte Redirects
