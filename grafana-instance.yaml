@@ -1,0 +1,17 @@
+apiVersion: grafana.integreatly.org/v1beta1
+kind: Grafana
+metadata:
+  name: grafana-instance
+  namespace: monitoring-system
+  labels:
+    dashboards: "grafana"
+spec:
+  dashboardLabelSelector:
+    matchLabels:
+      app: "grafana"
+  config:
+    log:
+      mode: "console"
+    auth.anonymous:
+      enabled: true
+      orgRole: "Admin"
