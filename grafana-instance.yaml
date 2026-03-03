@@ -21,8 +21,8 @@ spec:
     - name: TOKEN
       valueFrom:
         secretKeyRef:
-          name: grafana-sa-token
           key: token
+          name: grafana-sa-token
 ---
   apiVersion: networking.k8s.io/v1
   kind: Ingress
