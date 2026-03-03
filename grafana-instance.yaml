@@ -8,8 +8,14 @@ metadata:
 spec:
   dashboardLabelSelector:
     matchLabels:
-      app: grafana
+      app: grafana  
+  ingress:
+    enabled: true
+    targetPort: grafana-service # Name des Ports im Service
+    termination: edge           # Aktiviert TLS (HTTPS) am Router
   config:
+    server:
+      root_url: https://%(domain)s/ # Wichtig für korrekte Redirects
     log:
       mode: "console"
     auth.anonymous:
