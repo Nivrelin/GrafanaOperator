@@ -8,7 +8,7 @@ metadata:
 spec:
   dashboardLabelSelector:
     matchLabels:
-      app: "grafana"
+      app: grafana
   config:
     log:
       mode: "console"
