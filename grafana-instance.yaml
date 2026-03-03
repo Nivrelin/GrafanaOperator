@@ -17,6 +17,12 @@ spec:
     auth.anonymous:
       enabled: "true"
       orgRole: "Admin"
+  env:
+    - name: TOKEN
+      valueFrom:
+        secretKeyRef:
+          name: grafana-sa-token
+          key: token
 ---
   apiVersion: networking.k8s.io/v1
   kind: Ingress
