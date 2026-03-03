@@ -34,7 +34,7 @@ spec:
           path: "/"
           backend:
             service:
-              name: grafana
+              name: grafana-instance
               port: 
                 number: 3000
   
