@@ -12,8 +12,6 @@ spec:
   ingress:
     enabled: true
     targetPort: grafana # Name des Ports im Service
-    termination: edge           # Aktiviert TLS (HTTPS) am Router
-    hostname: grafana-web-monitoring-system.apps-crc.testing
   config:
     server:
       root_url: https://%(domain)s/ # Wichtig für korrekte Redirects
