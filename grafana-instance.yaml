@@ -11,7 +11,7 @@ spec:
       app: grafana  
   ingress:
     enabled: true
-    targetPort: grafana-service # Name des Ports im Service
+    targetPort: grafana-instance-service # Name des Ports im Service
     termination: edge           # Aktiviert TLS (HTTPS) am Router
   config:
     server:
