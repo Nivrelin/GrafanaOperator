@@ -9,9 +9,6 @@ spec:
   dashboardLabelSelector:
     matchLabels:
       app: grafana  
-  ingress:
-    enabled: true
-    targetPort: grafana # Name des Ports im Service
   config:
     server:
       root_url: https://%(domain)s/ # Wichtig für korrekte Redirects
