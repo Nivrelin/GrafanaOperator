@@ -25,11 +25,8 @@ spec:
           containers:
           - name: grafana
             env:           
-            - name: TOKEN
-              valueFrom:
-                secretKeyRef:
-                  key: token
-                  name: grafana-sa-token
+            - name: SA_TOKEN_FILE
+              value: "/var/run/secrets/kubernetes.io/serviceaccount/token"
 ---
   apiVersion: networking.k8s.io/v1
   kind: Ingress
