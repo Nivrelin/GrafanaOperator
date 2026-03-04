@@ -27,8 +27,6 @@ spec:
           containers:
           - name: grafana
             env:           
-            - name: SA_TOKEN_FILE
-              value: "/var/run/secrets/kubernetes.io/serviceaccount/token"
             - name: TOKEN
               valueFrom:
                 secretKeyRef:
