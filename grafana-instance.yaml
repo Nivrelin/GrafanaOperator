@@ -82,5 +82,33 @@ subjects:
   name: grafana-monitoring-sa
   namespace: monitoring-system
 ---
-
+apiVersion: grafana.integreatly.org/v1beta1
+kind: GrafanaDatasource
+metadata:
+  name: cnpg-datasource
+  namespace: monitoring-system
+spec:
+  instanceSelector:
+    matchLabels:
+      dashboards: "grafana"
+  allowCrossNamespaceImport: true
+  datasource:
+    name: OpenShift-Prometheus
+    type: prometheus
+    access: proxy
+    url: "https://thanos-querier.openshift-monitoring.svc.cluster.local:9091"
+    isDefault: true
+    jsonData:
+      httpHeaderName1: 'Authorization'
+      tlsSkipVerify: true     
+      httpMethod: GET
+    secureJsonData:
+      httpHeaderValue1: 'Bearer ${token}'
+  valuesFrom:
+    - targetPath: secureJsonData.httpHeaderValue1
+      valueFrom:
+        secretKeyRef:
+          name: grafana-sa-token
+          key: token
+---
   
