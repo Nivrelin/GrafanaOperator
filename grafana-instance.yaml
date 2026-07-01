@@ -6,12 +6,6 @@ metadata:
   labels:
     dashboards: "grafana"
 spec:
-  serviceAccountName: grafana-monitoring-sa
-  dashboardLabelSelector:
-    matchLabels:
-      dashboards: grafana  
-  secrets:
-    - grafana-sa-token
   config:
     server:
       root_url: https://%(domain)s/ # Wichtig für korrekte Redirects
